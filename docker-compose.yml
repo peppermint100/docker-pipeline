@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  application:
+    build: "./application"
+    container_name: "application"
+    ports:
+      - "5000:8080"
+
