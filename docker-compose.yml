@@ -6,4 +6,13 @@ services:
     container_name: "application"
     ports:
       - "5000:8080"
+  web:
+    image: "nginx:1.23.1-alpine"
+    ports:
+      - "80:80"
+    container_name: "nginx_web"
+    volumes:
+      - "./nginx/vol/html:/usr/share/nginx/html"
+
+
 
