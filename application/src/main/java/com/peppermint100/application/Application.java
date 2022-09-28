@@ -13,6 +13,11 @@ public class Application {
 
 	@GetMapping("/hello")
 	public String helloController() {
+		return "Hello " + ZonedDateTime.now();
+	}
+
+	@GetMapping("/hello/world")
+	public String worldController() {
 		return "Hello World " + ZonedDateTime.now();
 	}
 
