@@ -3,7 +3,6 @@ version: "3"
 services:
   application:
     build: "./application"
-    container_name: "application"
     ports:
       - "8080:8080"
   web:
@@ -15,6 +14,12 @@ services:
       - "./nginx/vol/conf.d:/etc/nginx/conf.d"
     depends_on:
       - application
-
-
-
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8081:8080"
+    volumes:
+      - "./jenkins/vol/var/run/docker.sock:/var/run/docker.sock"
+      - "./jenkins/vol/var/jenkins_home:/var/jenkins_home"
+    user: root
+    privileged: true
