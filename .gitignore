@@ -1,4 +1,5 @@
 .idea
 
-/jenkins/vol
+jenkins/vol/var/*
+!jenkins/
 
